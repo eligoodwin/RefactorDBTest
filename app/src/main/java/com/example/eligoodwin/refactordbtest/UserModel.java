@@ -8,6 +8,19 @@ import android.os.Parcelable;
  */
 
 public class UserModel implements Parcelable {
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator(){
+        public UserModel createFromParcel(Parcel in){
+            return new UserModel(in);
+        }
+
+        @Override
+        public UserModel[] newArray(int size) {
+            return new UserModel[size];
+        }
+    };
+
+
     private final String username;
     private final String tweet;
     private final String url;

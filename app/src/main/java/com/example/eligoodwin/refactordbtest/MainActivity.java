@@ -1,6 +1,7 @@
 package com.example.eligoodwin.refactordbtest;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.SQLException;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText username;
     private EditText url;
     private TextView textView;
+    private Button viewModels;
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private SQLiteDatabase sqLiteDatabase;
@@ -69,7 +71,15 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.diplayDBentry);
         submit = findViewById(R.id.submitButton);
         getButton =findViewById(R.id.getButton);
+        viewModels = findViewById(R.id.displayUsers);
 
+        viewModels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent displayUserModels = new Intent(MainActivity.this, DisplayUsers.class);
+                startActivity(displayUserModels);
+            }
+        });
 
 
         submit.setOnClickListener(new View.OnClickListener() {
