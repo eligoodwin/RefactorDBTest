@@ -100,15 +100,7 @@ public class MainActivity extends AppCompatActivity {
         long userID = sqLiteDatabase.insert("markoved_user", null, vals);
         vals.clear();
         Log.d(TAG, "Row id " + userID);
-//       Cursor usercursor = sqLiteDatabase.query("markoved_user",
-//                new String[]{"markoved_user_ID"},
-//                "user_name = ?",
-//                new String[]{theUsername},
-//                null,
-//                null,
-//                null,
-//                null
-//                );
+
 
         vals.put(MarkovUserDB.MARKOVED_USER_ID, userID);
         vals.put(MarkovUserDB.COLUMN_NAME_TWEET, tweetdata);
@@ -125,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null
                 );
+
         usercursor.moveToFirst();
         int userid = usercursor.getInt(usercursor.getColumnIndex("markoved_user_ID"));
         String thierUsername = usercursor.getString(usercursor.getColumnIndex("user_name"));
@@ -137,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
         String finalString = thierUsername + " " + picurl + " " +theTweet;
         textView.setText(finalString);
+        usercursor.close();
 
     }
 }
