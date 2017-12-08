@@ -44,9 +44,9 @@ public class DisplayUsers extends AppCompatActivity {
         //get the entries out of the database
         SQLiteDatabase database;
         MarkovUserDB markovUserDB;
-        markovUserDB = new MarkovUserDB(this);
 
         try{
+            markovUserDB = new MarkovUserDB(this);
             database = markovUserDB.getReadableDatabase();
             Log.d(TAG, "creating database" );
 

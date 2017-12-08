@@ -17,7 +17,7 @@ class MarkovUserDB extends SQLiteOpenHelper {
     public static final String COLUMN_NAME_USER_NAME = "user_name";
     public static final String COLUMN_NAME_TWEET = "tweet";
     public static final String COLUMN_NAME_PROFILE_URL = "profile_pic";
-    public static final int DB_VERSION = 24;
+    public static final int DB_VERSION = 25;
 
     public static final String SQL_CREATE_TABLE_MARKOVED_USERS = "CREATE TABLE " + TABLE_NAME_1
             + " (" + MARKOVED_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

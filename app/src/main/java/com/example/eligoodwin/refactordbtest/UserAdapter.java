@@ -3,6 +3,7 @@ package com.example.eligoodwin.refactordbtest;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,8 @@ public class UserAdapter extends ArrayAdapter<UserModel> {
             @Override
             public void onClick(View view) {
                 deleteUser(position);
+                Intent viewTweets = new Intent(context, DisplayTweets.class);
+                context.startActivity(viewTweets);
             }
         });
 
